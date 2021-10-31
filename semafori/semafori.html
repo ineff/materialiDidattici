@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <title>Giochi binari</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./semafori.js"></script>
+  </head>
+  <body>
+    <h1>
+      Prova il seguente gioco!
+    </h1>
+    <h2>
+      <a href="../index.html">Torna alla home</a>
+    </h2>
+    <h3>
+      Spiegazione:
+    </h3>
+    <p>
+      Il gioco che segue è molto semplice: viene dato un numero in binario che rappresenta una
+      sequenza di semafori, nel numero le cifre 1 rappresentano dei semafori verdi mentre
+      le cifre 0 rappresentano i semafori rossi.
+
+      Lo studente deve inserire nel campo <em>"Controllo"</em> il numero che in base dieci rappresenta
+      il numero binario per accendere correttamente i semafori.
+    </p>
+    <div class="game">
+      <form method="get" action="./">
+	<div><label>Il numero binario è: </label><label id="numero-binario">0</label>.</div>
+	<div><label for="controllo">Controllo:</label><input type="text" id="controllo"></div>
+	<div><button type="button" id="check">Fai il controllo</button></div>
+	<div><button type="reset" id="reset">Dai nuovo numero</button></div>
+	<div class="semafori">
+	  <div id="pin6" class="semaforo"></div>
+	  <div id="pin5" class="semaforo"></div>
+	  <div id="pin4" class="semaforo"></div>
+	  <div id="pin3" class="semaforo"></div>
+	  <div id="pin2" class="semaforo"></div>
+	  <div id="pin1" class="semaforo"></div>
+	</div>
+      </form>
+    </div>
+    
+  </body>
+</html>

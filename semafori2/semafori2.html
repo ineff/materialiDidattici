@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <title>Giochi binari</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./semafori2.js"></script>
+  </head>
+  <body>
+    <h1>
+      Prova il seguente gioco!
+    </h1>
+    <h2>
+      <a href="../index.html">
+	Torna alla home
+      </a>
+    </h2>
+    <h3>
+      Spiegazione:
+    </h3>
+    <p>
+      Il gioco che segue è molto semplice:
+      viene dato un numero decimale che rappresenta una
+      sequenza di semafori in cui i semafori verdi rappresentano
+      le cifre 1 della rappresentazione binaria del numero,
+      quelli rossi rappresentano gli 0.
+
+      Per risolvere il problema lo studente deve prima trasformare il numero
+      in binario e poi attivare/disattivare i semafori corrispondenti
+      cliccandoci sopra.
+    </p>
+    <div class="game">
+      <form method="get" action="./">
+	<div><label>Il numero è: </label><label id="numero">0</label>.</div>
+	<div><button type="button" id="check">Fai il controllo</button></div>
+	<div><button type="reset" id="reset">Dai nuovo numero</button></div>
+      </form>
+    </div>
+    <div class="semafori">
+      <div id="pin6" class="semaforo"></div>
+      <div id="pin5" class="semaforo"></div>
+      <div id="pin4" class="semaforo"></div>
+      <div id="pin3" class="semaforo"></div>
+      <div id="pin2" class="semaforo"></div>
+      <div id="pin1" class="semaforo"></div>
+    </div>
+  </body>
+</html>
