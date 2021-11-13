@@ -15,4 +15,11 @@
 .results {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
+
+#res {
+    border: 1px red solid;
+    padding: 2em;
+}
+

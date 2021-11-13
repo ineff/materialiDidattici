@@ -61,16 +61,59 @@ function convNum(num, base) {
     }
 }
 
+function checkInputInBase(input, base) {
+    let i;
+    if(base <= 10) {
+	for(i = 0;
+	    i < input.length &&
+	    input[i] >= '0' &&
+	    input[i] <= (base-1).toString();
+	    i++)
+	    ;
+	if(i < input.length) { // we found some wrong char
+	    return false;
+	}
+	else {
+	    return true;
+	}
+    }else if(base === 16) {
+	for(i = 0;
+	    i < input.length &&
+	    (
+		(input[i] >= '0' && input[i] <= '9')||
+		(input[i] >= 'A' && input[i] <= 'F')||
+		(input[i] >= 'a' && input[i] <= 'f')
+	    );
+	    i++)
+	    ;
+	if(i < input.length) { // if we found a wrong char
+	    return false;
+	}
+	else {
+	    return true;
+	}
+    }
+    else {
+	/* This case shouldn't be reached ever,
+	   if this happens something went wrong with the 
+	   html */
+	return false;
+    }
+    
+}
+
 function checkInput() {
     let errMsg = "";
     let startB = startBase.value;
     let endB = endBase.value;
     let input = inputData.value;
+    let base = Number(startB);
+    
     if(startB === "--")
 	errMsg += "Bisogna scegliere una base di partenza\n";
     if(endB === "--")
 	errMsg += "Bisogna scegliere una base di arrivo\n";
-    if((isNaN(inputData.value) && isNaN('0x'+inputData.value))||inputData.value === "")
+    if((isNaN(input) && isNaN('0x'+input))||input === "")
 	errMsg += "Bisogna inserire un numero da convertire\n";
     if(errMsg !== "") {
 	alert(errMsg);
@@ -79,7 +122,11 @@ function checkInput() {
     /* The user has inserted the input, now we need to check
        that the input is written in the correct base */
     // to be completed
-    return true;;
+    if(!checkInputInBase(input,base)) {
+	alert('L\'input inserito non può essere nella base indicata. Ricontrollare.');
+	return false;
+    }
+    return true;
 }
 
 function convert() {
